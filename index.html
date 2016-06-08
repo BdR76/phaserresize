@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Phaser states - resize</title>
+	<style> body { margin: 0; background: #B4D9E7; } </style>
+	<script src="js/phaser.min.js"></script>
+	<script src="js/bootup.js"></script>
+	<script src="js/preloader.js"></script>
+	<script src="js/mainmenu.js"></script>
+	<script src="js/game.js"></script>
+</head>
+<body>
+
+	<script>
+	(function() {
+		// initialize the framework
+		var game = new Phaser.Game(GAME_WIDTH, GAME_HEIGHT, Phaser.CANVAS, 'game');
+		// add game states
+		game.state.add('Bootup', mygame.Bootup);
+		game.state.add('Preloader', mygame.Preloader);
+		game.state.add('MainMenu', mygame.MainMenu);
+		game.state.add('Game', mygame.Game);
+		// start the boot state
+		game.state.start('Bootup');
+	})();
+	</script>
+
+</body>
+</html>
